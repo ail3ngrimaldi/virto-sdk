@@ -26,8 +26,7 @@ jobs:
       - name: Install Chrome dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y libnss3 libxss1 libasound2t64 libatk-bridge2.0-0 libgtk-3-0 libx11-xcb1
-          sudo apt install -y --no-install-recommends \
+          sudo apt-get install -y --no-install-recommends \
             libnss3 \
             libdbus-1-3 \
             libatk1.0-0 \
@@ -39,11 +38,9 @@ jobs:
             libxdamage1 \
             libgbm-dev \
             libatk-bridge2.0-0 \
-            binutils \
             libglib2.0-0 \
             libgdk-pixbuf2.0-0 \
             libgtk-3-0 \
-            libnss3-dev \
             libxss-dev \
             xvfb \
             fonts-liberation \
@@ -52,5 +49,7 @@ jobs:
         working-directory: ./components
 
       - name: 🧪 Run WebDriverIO Tests
-        run: npm run wdio
+        run: xvfb-run --auto-servernum npm run wdio
         working-directory: ./components
+        env:
+          DEBUG: 'webdriverio:*,@wdio/*'
