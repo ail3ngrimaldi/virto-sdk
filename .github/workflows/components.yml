@@ -26,7 +26,8 @@ jobs:
       - name: Install Chrome dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y libnss3 libxss1 libasound2 libatk-bridge2.0-0 libgtk-3-0 libx11-xcb1
+          sudo apt-get install -y libnss3 libxss1 libasound2t64 libatk-bridge2.0-0 libgtk-3-0 libx11-xcb1
+        working-directory: ./components
 
       - name: 🧪 Run WebDriverIO Tests
         run: npm run wdio
