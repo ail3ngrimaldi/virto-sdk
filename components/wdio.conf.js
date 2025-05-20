@@ -19,7 +19,7 @@ export const config = {
     capabilities: [{
       browserName: 'chrome',
       'goog:chromeOptions': {
-        args: ['--headless=new', '--no-sandbox', '--disable-gpu'],
+        args: ['--headless', '--no-sandbox', '--disable-gpu'],
       },
       webSocketUrl: false, // Disable BiDi protocol
     }],
