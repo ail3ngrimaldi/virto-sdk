@@ -15,13 +15,13 @@ export const config = {
     ],
     specs: ['./*.test.js'],
     exclude: [],
+    enforceWebDriverClassic: true,
     maxInstances: 10,
     capabilities: [{
       browserName: 'chrome',
       'goog:chromeOptions': {
         args: ['--headless', '--no-sandbox', '--disable-gpu'],
       },
-      webSocketUrl: false, // Disable BiDi protocol
     }],
     logLevel: 'debug',
     logLevels: {
